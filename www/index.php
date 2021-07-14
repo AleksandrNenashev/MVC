@@ -6,3 +6,9 @@ spl_autoload_register(function (string $className){
 
 $controller = new \MyProject\Controllers\MainController();
 $controller->main();
+
+if(!empty($_GET['name'])) {
+    $controller->sayHello($_GET['name']);
+}else{
+    $controller->main();
+}
